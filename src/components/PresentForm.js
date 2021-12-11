@@ -91,14 +91,15 @@ export default function PresentForm({ user }) {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="shoppingLink">
+          <Label for="giftShoppingLink">
             Shopping Link
           </Label>
           <Input
-            id="shoppingLink"
-            name="shoppingLink"
+            id="giftShoppingLink"
+            name="giftShoppingLink"
             value={formInput.giftShoppingLink}
-            placeholder="https://www.amazon.com/Gumby-IM-T-Shirt/dp/B07ZDY1QWN/ref=sr_1_19?keywords=Goth+gumby&qid=1638924986&sr=8-19"
+            onChange={handleChange}
+            placeholder="https://www.amazon.com/gift"
             type="url"
           />
         </FormGroup>
@@ -108,7 +109,7 @@ export default function PresentForm({ user }) {
         >
           Submit
         </Button>
-      </Form>s
+      </Form>
     </div>
   );
 }
