@@ -32,7 +32,7 @@ export default function Navigation() {
             navbar
           >
             <NavItem>
-              <NavLink href="/gifts">
+              <NavLink href="/">
                 Gifts
               </NavLink>
             </NavItem>

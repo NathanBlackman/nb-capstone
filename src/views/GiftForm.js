@@ -1,9 +1,10 @@
 import React from 'react';
+import PresentForm from '../components/PresentForm';
 
 export default function GiftForm() {
   return (
     <div>
-      <h1>Gift Form</h1>
+      <PresentForm />
     </div>
   );
 }
