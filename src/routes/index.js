@@ -14,7 +14,7 @@ export default function Routes({ user }) {
         <Route exact path="/welcome">
           <Authenticated />
         </Route>
-        <Route exact path="/gifts">
+        <Route exact path="/">
           <Gifts />
         </Route>
         <Route exact path="/gifts/:fbKey">

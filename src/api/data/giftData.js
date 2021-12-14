@@ -27,4 +27,16 @@ const createGift = (giftObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getGifts, getSingleGift, createGift };
+const deleteGift = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${fbUrl}/gifts/${fbKey}.json`)
+    .then(() => getGifts().then(resolve))
+    .catch(reject);
+});
+
+export {
+  getGifts,
+  getSingleGift,
+  createGift,
+  deleteGift,
+};

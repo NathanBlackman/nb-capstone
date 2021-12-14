@@ -55,7 +55,7 @@ export default function PresentForm({ user }) {
     createGift({ ...formInput, uid: user.uid })
       .then(() => {
         resetForm();
-        history.push('/gifts');
+        history.push('/');
       });
   };
 
@@ -108,6 +108,13 @@ export default function PresentForm({ user }) {
           color="primary"
         >
           Submit
+        </Button>
+        <Button
+          type="button"
+          onClick={() => history.push('/')}
+          color="danger"
+        >
+          Cancel
         </Button>
       </Form>
     </div>
