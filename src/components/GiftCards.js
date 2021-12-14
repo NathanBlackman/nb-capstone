@@ -30,7 +30,7 @@ export default function GiftCards({ gift, setGifts }) {
           <Button
             type="button"
             color="info"
-            onClick={() => history.push('/gifts/:fbKey')}
+            onClick={() => history.push(`/gifts/${gift.firebaseKey}`)}
           >
             View
           </Button>

@@ -42,7 +42,7 @@ export default function Gifts() {
             </div>
           </>
         ) : (
-          'No Gifts Available'
+          <h1>Start Adding Gifts!!!</h1>
         )}
       </div>
     </div>
