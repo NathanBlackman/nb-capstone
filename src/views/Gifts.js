@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 import { getGifts } from '../api/data/giftData';
 import GiftCards from '../components/GiftCards';
 
@@ -20,14 +20,18 @@ export default function Gifts() {
 
   return (
     <div>
-      <h1 className="gifts-header">Gifts</h1>
-      <Button
+      <img
+        src="GiftsThing.png"
+        alt="giftsPic"
+      />
+      <button
+        className="add-gift-btn"
         type="button"
         onClick={() => history.push('/giftform')}
         color="primary"
       >
-        New Gift
-      </Button>
+        +
+      </button>
       <div className="gift-container">
         {gifts ? (
           <>

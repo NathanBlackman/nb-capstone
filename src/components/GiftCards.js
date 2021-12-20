@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   CardTitle,
+  CardImg,
   CardText,
   Button,
 } from 'reactstrap';
@@ -17,33 +18,51 @@ export default function GiftCards({ gift, setGifts }) {
     deleteGift(gift.firebaseKey).then((gifts) => setGifts(gifts));
   };
 
+  const defaultGiftURL = 'https://www.google.com/search?q=present+clipart&tbm=isch&chips=q:present+clipart,g_1:silhouette:bNOskXofUaA%3D&rlz=1C5CHFA_enUS907US907&hl=en&sa=X&ved=2ahUKEwjl3MWRkuL0AhVILK0KHQ75AisQ4lYoCXoECAEQIw&biw=1440&bih=789#imgrc=eZIX9B_KI0VT6M';
+
   return (
     <div>
-      <Card>
+      <Card className="card">
         <CardBody>
-          <CardTitle tag="h5">
+          <CardTitle
+            tag="h5"
+            className="card-title"
+          >
             {gift.giftName}
           </CardTitle>
-          <CardText>
+          <CardImg
+            className="card-img"
+            alt="Gift"
+            src={gift.giftImage ? gift.giftImage : defaultGiftURL}
+          />
+          <CardText
+            className="card-desc"
+          >
             {gift.giftDescription}
           </CardText>
           <Button
+            className="view-btn"
             type="button"
-            color="info"
+            color="success"
+            size="lg"
             onClick={() => history.push(`/gifts/${gift.firebaseKey}`)}
           >
             View
           </Button>
           <Button
+            className="edit-btn"
             type="button"
             color="warning"
-            onClick={() => history.push('/gifts/')}
+            size="lg"
+            onClick={() => history.push(`/editgift/${gift.firebaseKey}`)}
           >
             Edit
           </Button>
           <Button
-            type="button"
+            className="delete-btn"
             color="danger"
+            size="lg"
+            type="button"
             onClick={handleDelete}
           >
             Delete
