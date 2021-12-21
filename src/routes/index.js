@@ -5,7 +5,7 @@ import Authenticated from '../views/Authenticated';
 import Gifts from '../views/Gifts';
 import GiftsView from '../views/GiftsView';
 import GiftForm from '../views/GiftForm';
-import EditGiftsForm from '../views/EditGiftsForm';
+import Edit from '../views/Edit';
 
 export default function Routes({ user }) {
   return (
@@ -24,7 +24,7 @@ export default function Routes({ user }) {
           <GiftForm user={user} />
         </Route>
         <Route exact path="/editgift/:fbKey">
-          <EditGiftsForm />
+          <Edit />
         </Route>
       </Switch>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Nav,
   Navbar,
@@ -12,9 +13,10 @@ import {
   DropdownItem,
   DropdownMenu,
 } from 'reactstrap';
+import image from '../images/santasbaglogo.png';
 import { signOutUser } from '../api/auth';
 
-export default function Navigation() {
+export default function Navigation({ user }) {
   return (
     <div>
       <Navbar
@@ -23,9 +25,12 @@ export default function Navigation() {
         light
       >
         <NavbarBrand href="/">
-          reactstrap
+          <img
+            className="navbar-logo"
+            src={image}
+            alt="Santa's Bag Logo"
+          />
         </NavbarBrand>
-        {/* <NavbarToggler onClick={function noRefCheck(){}} /> */}
         <Collapse navbar>
           <Nav
             className="me-auto"
@@ -41,17 +46,8 @@ export default function Navigation() {
                 New Gift
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/editgift/:fbKey">
-                Edit Gift (test)
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/gifts/:fbKey">
-                Gifts View (test)
-              </NavLink>
-            </NavItem>
             <UncontrolledDropdown
+              className="navbar-user"
               inNavbar
               nav
             >
@@ -59,14 +55,16 @@ export default function Navigation() {
                 caret
                 nav
               >
-                Options
+                <img
+                  className="navbar-profile-pic"
+                  alt={user.fullName}
+                  src={user.profilePic}
+                />
+                {user.user}
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
+                  {user.user}
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
@@ -85,3 +83,19 @@ export default function Navigation() {
     </div>
   );
 }
+
+Navigation.defaultProps = {
+  user: null,
+};
+
+Navigation.propTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      fullName: PropTypes.string,
+      profilePic: PropTypes.string,
+      uid: PropTypes.string,
+      user: PropTypes.string,
+    }),
+  ]),
+};

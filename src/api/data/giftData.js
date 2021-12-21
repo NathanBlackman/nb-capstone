@@ -34,9 +34,16 @@ const deleteGift = (fbKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateGift = (updateObj) => new Promise((resolve, reject) => {
+  axios.patch(`${fbUrl}/gifts/${updateObj.firebaseKey}.json`, updateObj)
+    .then(() => getGifts().then(resolve))
+    .catch(reject);
+});
+
 export {
   getGifts,
   getSingleGift,
   createGift,
   deleteGift,
+  updateGift,
 };

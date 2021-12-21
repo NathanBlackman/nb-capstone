@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 import { getGifts } from '../api/data/giftData';
 import GiftCards from '../components/GiftCards';
+import giftsImage from '../images/GiftsThing.png';
 
 export default function Gifts() {
   const [gifts, setGifts] = useState([]);
@@ -20,14 +21,21 @@ export default function Gifts() {
 
   return (
     <div>
-      <h1 className="gifts-header">Gifts</h1>
-      <Button
+      <div>
+        <img
+          className="gifts-image"
+          src={giftsImage}
+          alt="gifts"
+        />
+      </div>
+      <button
+        className="add-gift-btn"
         type="button"
         onClick={() => history.push('/giftform')}
         color="primary"
       >
-        New Gift
-      </Button>
+        Add Gift
+      </button>
       <div className="gift-container">
         {gifts ? (
           <>
@@ -42,7 +50,7 @@ export default function Gifts() {
             </div>
           </>
         ) : (
-          'No Gifts Available'
+          <h1>Start Adding Gifts!!!</h1>
         )}
       </div>
     </div>
