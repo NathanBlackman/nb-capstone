@@ -13,6 +13,7 @@ import {
   DropdownItem,
   DropdownMenu,
 } from 'reactstrap';
+import image from '../images/santasbaglogo.png';
 import { signOutUser } from '../api/auth';
 
 export default function Navigation({ user }) {
@@ -25,7 +26,8 @@ export default function Navigation({ user }) {
       >
         <NavbarBrand href="/">
           <img
-            src="../santasbaglogo.png"
+            className="navbar-logo"
+            src={image}
             alt="Santa's Bag Logo"
           />
         </NavbarBrand>
@@ -45,6 +47,7 @@ export default function Navigation({ user }) {
               </NavLink>
             </NavItem>
             <UncontrolledDropdown
+              className="navbar-user"
               inNavbar
               nav
             >
@@ -52,13 +55,12 @@ export default function Navigation({ user }) {
                 caret
                 nav
               >
-                <div className="navbar-profile">
-                  <img
-                    className="navbar-profile-pic"
-                    alt={user.fullName}
-                    src={user.profilePic}
-                  />
-                </div>
+                <img
+                  className="navbar-profile-pic"
+                  alt={user.fullName}
+                  src={user.profilePic}
+                />
+                {user.user}
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>

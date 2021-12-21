@@ -10,13 +10,31 @@ body {
 }
 
 .navbar-profile {
-  flex-wrap: nowrap;
+  flex-wrap: flex;
+}
+
+.navbar-logo {
+  height: 100px;
+  margin-left: 20px;
 }
 
 .navbar-profile-pic {
+  width: 2em;
+  margin: -1em .5em -1em 0;
   border: 1px transparent;
-  border-radius: 50%;
-  height: 60px;
+  border-radius: 100px;
+}
+
+.navbar-user {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.gifts-image {
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -79,7 +97,7 @@ body {
 }
 
 .add-gift-btn {
-  flex-wrap: flex;
+  display: block;
   border: 10px;
   border-style: solid;
   border-radius: 50px;
@@ -90,8 +108,8 @@ body {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 5px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
 }
 
@@ -139,4 +157,8 @@ p {
   font-family: 'Lobster', cursive;
   font-size: 30px;
   color: grey;
+}
+
+.spinner {
+  margin-top: 50px;
 }

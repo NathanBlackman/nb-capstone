@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 // import { Button } from 'reactstrap';
 import { getGifts } from '../api/data/giftData';
 import GiftCards from '../components/GiftCards';
+import giftsImage from '../images/GiftsThing.png';
 
 export default function Gifts() {
   const [gifts, setGifts] = useState([]);
@@ -20,10 +21,13 @@ export default function Gifts() {
 
   return (
     <div>
-      {/* <img
-        src="GiftsThing.png"
-        alt="giftsPic"
-      /> */}
+      <div>
+        <img
+          className="gifts-image"
+          src={giftsImage}
+          alt="gifts"
+        />
+      </div>
       <button
         className="add-gift-btn"
         type="button"
