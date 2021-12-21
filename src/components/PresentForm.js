@@ -146,12 +146,14 @@ export default function PresentForm({ user }) {
             <Button
               type="submit"
               color="primary"
+              size="lg"
             >
               {fbKey ? 'Update' : 'Submit'}
             </Button>
             <Button
               type="button"
               onClick={() => history.push('/')}
+              size="lg"
               color="danger"
             >
               Cancel

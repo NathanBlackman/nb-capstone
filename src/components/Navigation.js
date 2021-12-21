@@ -25,8 +25,8 @@ export default function Navigation({ user }) {
       >
         <NavbarBrand href="/">
           <img
-            src="../images/santasbaglogo.png"
-            alt="logo"
+            src="../santasbaglogo.png"
+            alt="Santa's Bag Logo"
           />
         </NavbarBrand>
         <Collapse navbar>

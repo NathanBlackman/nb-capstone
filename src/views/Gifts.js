@@ -20,17 +20,17 @@ export default function Gifts() {
 
   return (
     <div>
-      <img
+      {/* <img
         src="GiftsThing.png"
         alt="giftsPic"
-      />
+      /> */}
       <button
         className="add-gift-btn"
         type="button"
         onClick={() => history.push('/giftform')}
         color="primary"
       >
-        +
+        Add Gift
       </button>
       <div className="gift-container">
         {gifts ? (
