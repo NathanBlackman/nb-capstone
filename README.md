@@ -1,4 +1,16 @@
 
+Santa's Bag
+
+My biggest problem during every holiday season is figuring out what I want for christmas, as well as communicating it to my family in a timely manner. This purpose of this project is to add gift ideas and store them in a safe and organized place, as well as be able to delete or edit any item!
+
+Wireframe:
+https://www.figma.com/file/SHcPKCdRYyVqFrKN9RFAdz/Santa's-Bag-Capstone?node-id=0%3A1
+
+Deploy Link:
+https://santasbag.netlify.app/
+
+Project Board
+
 
 # React Template
 [![Netlify Status](https://api.netlify.com/api/v1/badges/339c4ae9-fc7f-41b4-9b49-2dab0a20eaba/deploy-status)](https://app.netlify.com/sites/react-template-21/deploys)
